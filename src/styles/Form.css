@@ -37,11 +37,18 @@ form input:focus {
   outline: none;
 }
 
-form .PlusIcon {
-  color: #fff;
+form button {
   position: absolute;
   right: 15px;
   top: 20px;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+form .PlusIcon {
+  color: #fff;
 
   font-size: 1.5rem;
 }

@@ -5,6 +5,7 @@ import './styles/App.css';
 import './styles/Header.css';
 import './styles/Main.css';
 import './styles/Form.css';
+import './styles/Footer.css';
 
 export default function App() {
   return (
