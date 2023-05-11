@@ -1,0 +1,101 @@
+#TodoList {
+  width: 100%;
+  background-color: #25273d;
+  box-shadow: 2px 4px 15px rgb(0, 0, 0, 0.5);
+  color: #cacaca;
+  border-radius: 3px 3px 0 0;
+  box-shadow: -2px -4px 15px rgb(0, 0, 0, 0.5);
+
+  transition: background-color 0.3s ease-in-out;
+}
+
+#TodoList li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
+  border-bottom: 1px solid #cccccc20;
+}
+
+#TodoList li .circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+}
+
+#TodoList li .circle svg {
+  opacity: 0;
+}
+
+#TodoList li.active .circle {
+  background: linear-gradient(90deg, rgb(42, 120, 246), rgb(250, 29, 231));
+}
+
+#TodoList li.active {
+  text-decoration: line-through;
+  color: #cccccca0;
+}
+
+#TodoList li.active svg {
+  opacity: 1;
+  color: #fff;
+}
+
+body.dark #TodoList {
+  background-color: #ededed;
+  color: #25273d;
+}
+
+body.dark #TodoList li {
+  color: #25273d;
+}
+
+.ListFooter {
+  background-color: #25273d;
+  color: #54587e;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1rem;
+  border-radius: 0 0 3px 3px;
+  box-shadow: 2px 4px 15px rgb(0, 0, 0, 0.5);
+
+  transition: background-color 0.3s ease-in-out;
+}
+
+.ListFooter span {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.ListFooterOptions {
+  display: flex;
+  gap: 1rem;
+}
+
+.ListFooterOptions li {
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.ListFooterOptions li.active {
+  color: #5786c9;
+}
+
+.ListFooterOptions li:hover,
+.ListFooter span:hover {
+  color: #5786c9;
+}
+
+body.dark .ListFooter {
+  background-color: #ededed;
+  box-shadow: 2px 4px 15px rgb(0, 0, 0, 0.5), 0 -1px 0px 0px #ededed;
+}

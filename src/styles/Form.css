@@ -1,0 +1,51 @@
+form {
+  width: 100%;
+  position: relative;
+
+  margin-bottom: 1.5rem;
+
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: 2px 4px 15px rgb(0, 0, 0, 0.5);
+}
+
+form input,
+ul {
+  font-family: 'Montserrat', sans-serif;
+}
+
+form input {
+  background-color: #25273d;
+  color: #fff;
+  font-size: 1rem;
+
+  height: 100%;
+  width: 100%;
+
+  border: none;
+  padding: 1.5rem;
+
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+body.dark form input {
+  background-color: #ededed;
+  color: #25273d;
+}
+
+form input:focus {
+  outline: none;
+}
+
+form .PlusIcon {
+  color: #fff;
+  position: absolute;
+  right: 15px;
+  top: 20px;
+
+  font-size: 1.5rem;
+}
+
+body.dark form .PlusIcon {
+  color: #25273d;
+}

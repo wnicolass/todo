@@ -11,6 +11,13 @@ body {
   font-family: 'Roboto', sans-serif;
 
   min-height: 100vh;
+  position: relative;
+
+  transition: background-color 0.3s ease-in-out;
+}
+
+body.dark {
+  background-color: #ededed;
 }
 
 .banner {
@@ -34,7 +41,14 @@ body {
 .wrapper {
   margin: 0 auto;
   padding-block: 5rem;
-  width: min(28rem, 80%);
+  width: min(35rem, 80%);
 
   position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+ul {
+  list-style-type: none;
 }
