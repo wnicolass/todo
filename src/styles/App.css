@@ -13,8 +13,28 @@ body {
   min-height: 100vh;
 }
 
+.banner {
+  background-image: url('../images/bh.jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% 22rem;
+  height: 18rem;
+}
+
+.banner-backdrop {
+  background: linear-gradient(
+    90deg,
+    rgba(50, 29, 171, 0.555),
+    rgba(146, 17, 135, 0.451)
+  );
+  height: 100%;
+  width: 100%;
+}
+
 .wrapper {
   margin: 0 auto;
   padding-block: 5rem;
   width: min(28rem, 80%);
+
+  position: absolute;
 }

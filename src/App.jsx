@@ -7,9 +7,14 @@ import './styles/Main.css';
 
 export default function App() {
   return (
-    <div className="wrapper">
-      <Header />
-      <Main />
-    </div>
+    <>
+      <div className="banner">
+        <div className="banner-backdrop"></div>
+      </div>
+      <div className="wrapper">
+        <Header />
+        <Main />
+      </div>
+    </>
   );
 }
