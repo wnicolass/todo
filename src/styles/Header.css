@@ -1,0 +1,17 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  letter-spacing: 1rem;
+}
+
+header svg {
+  font-size: 2rem;
+  cursor: pointer;
+}
