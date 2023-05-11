@@ -4,6 +4,7 @@ import Header from './components/Header';
 import './styles/App.css';
 import './styles/Header.css';
 import './styles/Main.css';
+import './styles/Form.css';
 
 export default function App() {
   return (
