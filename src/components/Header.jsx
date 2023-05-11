@@ -9,6 +9,7 @@ export default class Header extends Component {
 
   handleClickOnIcon = () => {
     const { currentIcon: currIcon } = this.state;
+    document.body.classList.toggle('dark');
     this.setState({
       currentIcon: currIcon === faSun ? faMoon : faSun,
     });
