@@ -1,0 +1,16 @@
+small {
+  font-family: 'Montserrat', sans-serif;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #cacaca;
+
+  transition: color 0.3s ease-in-out;
+}
+
+body.dark small {
+  color: #25273d;
+}
