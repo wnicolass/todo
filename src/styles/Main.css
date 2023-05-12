@@ -19,12 +19,17 @@
 }
 
 #TodoList li div {
-  align-self: center;
-  margin-right: auto;
-  outline: none;
+  display: flex;
+  align-items: center;
 }
 
-#TodoList li .fa-xmark {
+#TodoList li .Actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#TodoList li .Actions svg {
   cursor: pointer;
 }
 
