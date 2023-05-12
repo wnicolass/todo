@@ -66,8 +66,26 @@ export default class Main extends Component {
     });
   };
 
+  componentDidMount() {
+    const { todos } = JSON.parse(localStorage.getItem('todos'));
+
+    if (!todos.length) {
+      return;
+    }
+
+    this.setState({
+      todos,
+    });
+  }
+
   componentDidUpdate(_, prevState) {
-    console.log(prevState);
+    const { todos } = this.state;
+
+    if (todos === prevState.todos) {
+      return;
+    }
+
+    localStorage.setItem('todos', JSON.stringify({ todos }));
   }
 
   render() {
