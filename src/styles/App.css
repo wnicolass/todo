@@ -16,7 +16,7 @@ body {
   transition: background-color 0.3s ease-in-out;
 }
 
-body.dark {
+body.light {
   background-color: #ededed;
 }
 
