@@ -78,7 +78,8 @@ body.light #TodoList {
   color: #25273d;
 }
 
-body.light #TodoList li {
+body.light #TodoList li,
+body.light #TodoList svg:not(.circle svg) {
   color: #25273d;
 }
 
@@ -102,22 +103,6 @@ body.light #TodoList li {
   transition: color 0.2s ease;
 }
 
-.ListFooterOptions {
-  display: flex;
-  gap: 1rem;
-}
-
-.ListFooterOptions li {
-  cursor: pointer;
-
-  transition: color 0.2s ease;
-}
-
-.ListFooterOptions li.completed {
-  color: #5786c9;
-}
-
-.ListFooterOptions li:hover,
 .ListFooter span:hover {
   color: #5786c9;
 }

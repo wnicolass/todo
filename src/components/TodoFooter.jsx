@@ -1,17 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-export default class TodoFooter extends Component {
-  render() {
-    return (
-      <div className="ListFooter">
-        <span id="TotalLeft">5 items left</span>
-        <ul className="ListFooterOptions">
-          <li className="active">All</li>
-          <li>Active</li>
-          <li>Completed</li>
-        </ul>
-        <span id="Clear">Clear Completed</span>
-      </div>
-    );
-  }
+export default function TodoFooter({ todosLeft, handleClick }) {
+  return (
+    <div className="ListFooter">
+      <span id="TotalLeft">{todosLeft} items left</span>
+      <span id="Clear" onClick={handleClick}>
+        Clear Completed
+      </span>
+    </div>
+  );
 }
+
+TodoFooter.propTypes = {
+  todosLeft: PropTypes.number.isRequired,
+  handleClick: PropTypes.func.isRequired,
+};
