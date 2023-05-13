@@ -5,15 +5,39 @@ import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 export default class Header extends Component {
   state = {
     currentIcon: faSun,
+    theme: 'dark',
   };
 
   handleClickOnIcon = () => {
+    document.body.classList.toggle('light');
     const { currentIcon: currIcon } = this.state;
-    document.body.classList.toggle('dark');
+    const isSun = currIcon === faSun;
     this.setState({
-      currentIcon: currIcon === faSun ? faMoon : faSun,
+      currentIcon: isSun ? faMoon : faSun,
+      theme: isSun ? 'dark' : 'light',
     });
   };
+
+  componentDidMount() {
+    const theme = JSON.parse(localStorage.getItem('theme')) ?? 'dark';
+
+    if (theme) {
+      document.body.classList.add(theme);
+    }
+
+    this.setState({
+      currentIcon: theme === 'dark' ? faSun : faMoon,
+      theme,
+    });
+  }
+
+  componentDidUpdate() {
+    const isLightTheme = document.body.classList.contains('light');
+    localStorage.setItem(
+      'theme',
+      JSON.stringify(isLightTheme ? 'light' : 'dark'),
+    );
+  }
 
   render() {
     const { currentIcon } = this.state;

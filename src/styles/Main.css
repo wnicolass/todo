@@ -16,6 +16,17 @@
   width: 100%;
   padding: 1rem;
   border-bottom: 1px solid #cccccc20;
+  cursor: pointer;
+
+  transition: background-color 0.2s ease-in-out;
+}
+
+#TodoList li:hover {
+  background-color: #575a7c;
+}
+
+body.light #TodoList li:hover {
+  background-color: #cacaca;
 }
 
 #TodoList li div {
@@ -48,26 +59,27 @@
   opacity: 0;
 }
 
-#TodoList li.active .circle {
+#TodoList li.completed .circle {
   background: linear-gradient(90deg, rgb(42, 120, 246), rgb(250, 29, 231));
 }
 
-#TodoList li.active {
+#TodoList li.completed {
   text-decoration: line-through;
   color: #cccccca0;
 }
 
-#TodoList li.active svg {
+#TodoList li.completed svg {
   opacity: 1;
   color: #fff;
 }
 
-body.dark #TodoList {
+body.light #TodoList {
   background-color: #ededed;
   color: #25273d;
 }
 
-body.dark #TodoList li {
+body.light #TodoList li,
+body.light #TodoList svg:not(.circle svg) {
   color: #25273d;
 }
 
@@ -91,27 +103,11 @@ body.dark #TodoList li {
   transition: color 0.2s ease;
 }
 
-.ListFooterOptions {
-  display: flex;
-  gap: 1rem;
-}
-
-.ListFooterOptions li {
-  cursor: pointer;
-
-  transition: color 0.2s ease;
-}
-
-.ListFooterOptions li.active {
-  color: #5786c9;
-}
-
-.ListFooterOptions li:hover,
 .ListFooter span:hover {
   color: #5786c9;
 }
 
-body.dark .ListFooter {
+body.light .ListFooter {
   background-color: #ededed;
   box-shadow: 2px 4px 15px rgb(0, 0, 0, 0.5), 0 -1px 0px 0px #ededed;
 }

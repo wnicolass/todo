@@ -1,43 +1,37 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faXmark, faPen } from '@fortawesome/free-solid-svg-icons';
 
-export default class Todo extends Component {
-  handleEdit = (event, idx) => {
-    const { onEdit: editTodo } = this.props;
-    editTodo(idx);
-  };
-
-  handleDelete = ({ target }, idx) => {
-    const { onDelete: deleteTodo } = this.props;
-    deleteTodo(idx);
-  };
-
-  render() {
-    const { data: todos } = this.props;
-    return (
-      <ul id="TodoList">
-        {todos.map((todo, idx) => (
-          <li key={todo}>
-            <div>
-              <span className="circle">
-                <FontAwesomeIcon icon={faCheck} />
-              </span>
-              {todo}
-            </div>
-            <div className="Actions">
-              <FontAwesomeIcon
-                icon={faPen}
-                onClick={(event) => this.handleEdit(event, idx)}
-              />
-              <FontAwesomeIcon
-                icon={faXmark}
-                onClick={(event) => this.handleDelete(event, idx)}
-              />
-            </div>
-          </li>
-        ))}
-      </ul>
-    );
-  }
+export default function Todo({ todos, handleEdit, handleDelete, handleClick }) {
+  return (
+    <ul id="TodoList">
+      {todos.map((todo, idx) => (
+        <li
+          key={todo.todoText}
+          onClick={(event) => handleClick(event)}
+          data-index={idx}
+          className={todo.isCompleted ? 'completed' : ''}
+        >
+          <div>
+            <span className="circle">
+              <FontAwesomeIcon icon={faCheck} />
+            </span>
+            {todo.todoText}
+          </div>
+          <div className="Actions">
+            <FontAwesomeIcon icon={faPen} onClick={() => handleEdit(idx)} />
+            <FontAwesomeIcon icon={faXmark} onClick={() => handleDelete(idx)} />
+          </div>
+        </li>
+      ))}
+    </ul>
+  );
 }
+
+Todo.propTypes = {
+  todos: PropTypes.arrayOf(PropTypes.object),
+  handleEdit: PropTypes.func.isRequired,
+  handleDelete: PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired,
+};

@@ -1,7 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Footer extends Component {
-  render() {
-    return <small>Click on the text to edit a todo</small>;
-  }
+export default function Footer() {
+  return <small>Click on the todo to mark as completed</small>;
 }
