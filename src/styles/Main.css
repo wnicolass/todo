@@ -59,16 +59,16 @@ body.light #TodoList li:hover {
   opacity: 0;
 }
 
-#TodoList li.active .circle {
+#TodoList li.completed .circle {
   background: linear-gradient(90deg, rgb(42, 120, 246), rgb(250, 29, 231));
 }
 
-#TodoList li.active {
+#TodoList li.completed {
   text-decoration: line-through;
   color: #cccccca0;
 }
 
-#TodoList li.active svg {
+#TodoList li.completed svg {
   opacity: 1;
   color: #fff;
 }
@@ -113,7 +113,7 @@ body.light #TodoList li {
   transition: color 0.2s ease;
 }
 
-.ListFooterOptions li.active {
+.ListFooterOptions li.completed {
   color: #5786c9;
 }
 
